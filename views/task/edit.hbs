@@ -1,0 +1,19 @@
+<h3>{{viewTitle}}</h3>
+
+
+
+<form action="/task/edit/{{task._id}}" method="post">
+
+    <div class="form-group">
+        <label>Task name:</label>
+        <input required type="text" name="taskEditName" placeholder="task name" value="{{task.taskName}}">
+    </div>
+    <div class="form-group">
+        <label>Task description:</label>
+        <input required type="text" name="taskEditDescription" placeholder="task description"
+            value="{{task.taskDescription}}">
+    </div>
+    <button type="submit" href="/task/list" class="btn btn-success">Update</button>
+</form>
+
+<a href="/task/list" class="btn btn-primary">View tasks</a>
