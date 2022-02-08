@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Task = mongoose.model('Task')
 
 router.get('/', (req, res) => {
-    res.render('./task/addTask', { viewTitle: "Add task" })
+    res.render('./task/addTask', { viewTitle: "ADD TASK" })
 })
 
 //to display all tasks
@@ -60,7 +60,7 @@ router.get('/edit/:id', (req, res) => {
     Task.findById(id, (err, doc) => {
         if (!err) {
             res.render('./task/edit', {
-                viewTitle: "Update this task",
+                viewTitle: "Edit task",
                 task: doc.toJSON()
             })
         }

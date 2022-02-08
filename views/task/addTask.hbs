@@ -1,22 +1,207 @@
-<h3>{{viewTitle}}</h3>
+<div class="Header">
+
+    <h1 class="Heading">Gotta'Do</h1>
+
+    <a href="/task/list" class="Heading"> <button type="button" class="button" id="viewButton">View all tasks</button>
+    </a>
+    <a href="home" class="Heading"> <button type="button" class="button" id="homeBtn">Home</button>
+    </a>
+</div>
 
 
 
-<form action="/task" method="post">
-
+<form action="/task" method="post" class="addTaskBox">
+    <h3>{{viewTitle}}</h3>
     <div class="form-group">
-        <label>Task name:</label>
-        <input required type="text" name="taskName" placeholder="task name">
-    </div>
+        <label for="taskName" class="Label" id="nameLabel">Task name:</label> <br>
+        <input autocomplete="off" required type="text" name="taskName" placeholder="Task name" class="inputfield"
+            id="nameInput">
+    </div> <br>
     <div class="form-group">
-        <label>Task description:</label>
-        <input required type="text" name="taskDescription" placeholder="task description">
+        <label for="taskDescription" class="Label" id="descLabel">Task description:</label> <br>
+        <input autocomplete="off" required type="text" name="taskDescription" placeholder="Task description"
+            class="inputfield" id="descInput">
     </div>
-    <button type="submit" href="/task/list" class="btn btn-success">Submit</button>
+    <button type="submit" href="/task/list" class="button" id="addBtn">Add</button>
+
 </form>
 
-<a href="/task/list" class="btn btn-primary">View tasks</a>
+{{!-- <a href="/task/list"> <button class="button">View tasks</button> </a> --}}
 
 <style>
+    .Header {
+        height: 80px;
+        margin-left: 0%;
+        margin-top: 0%;
+        padding-top: 8px;
+        margin-bottom: 0%;
+        padding-bottom: 10px;
+        background-color: #1CA8C4;
+        padding-left: 50px;
+        border-radius: 30px;
+        border-width: 1.5px;
+        border-style: outset;
+        border-color: #1E2019;
+    }
 
+    h1 {
+        color: #FFFFFF;
+        font-family: Candara;
+        font-size: 60px;
+        margin-top: 0%;
+    }
+
+    .Heading {
+        float: left;
+
+    }
+
+    h3 {
+        color: #1CA8C4;
+        font-family: Helvetica;
+        font-weight: bolder;
+        font-size: 50px;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 2%;
+    }
+
+    .addTaskBox {
+        background-color: #87A8AB;
+        background-color: white;
+        margin-top: 10px;
+        margin-left: 600px;
+        width: 600px;
+        height: 600px;
+        border-color: #FFD270;
+        border-width: 3px;
+        border-radius: 10px;
+        box-shadow: 10px 8px #87A8AB;
+    }
+
+    .inputfield {
+        border-width: 3px;
+        border-radius: 10px;
+        margin-left: 100px;
+        margin-top: 10px;
+        font-size: 25px;
+        border-color: #FFC547;
+        background-color: #FFDF99;
+
+    }
+
+    .inputfield:placeholder-shown {
+        font-size: 26px;
+    }
+
+    .inputfield:placeholder-shown {
+        font-size: 26px;
+    }
+
+    #nameInput {
+        width: 400px;
+        height: 50px;
+    }
+
+    #descInput {
+        width: 400px;
+        height: 250px;
+    }
+
+    .Label {
+        font-family: Calibri;
+        color: #1E2019;
+        font-weight: bold;
+        font-size: 30px;
+        margin-left: 70px;
+    }
+
+    #viewButton {
+        background-color: #FFFFFF;
+        color: #1CA8C4;
+        font-size: 25px;
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin-top: 15px;
+        margin-left: 930px;
+        border-color: #FFC547;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #viewButton:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+
+    }
+
+    #viewButton:active {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+
+    }
+
+    #homeBtn {
+        background-color: #FFFFFF;
+        color: #1CA8C4;
+        font-size: 25px;
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin-top: 15px;
+        margin-right: 20px;
+        margin-left: 25px;
+        border-color: #FFC547;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #homeBtn:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+
+    }
+
+    #homeBtn:active {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+
+    }
+
+    #addBtn {
+        background-color: #1CA8C4;
+        color: #FFFFFF;
+        font-size: 25px;
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin-top: 20px;
+        border-color: #FFC547;
+        margin-left: 210px;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #addBtn:active {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+    }
+
+    #addBtn:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+    }
 </style>

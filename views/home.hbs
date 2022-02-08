@@ -1,14 +1,250 @@
-<header>
-    <div>
-        <h1>Gotta'Do</h1>
-    </div>
-</header>
+<div class="Header">
 
-<p><span>SimplyU</span> lets you simply get to know yourself. <br>
-    I know its so cringey but I am not getting any other proper ideas right now.<br>
-    Just sign up for more cringey stuff. </p>
+    <h1 class="Heading">Gotta'Do</h1>
+
+    <a href="/task/list" class="Heading"> <button type="button" class="button" id="viewButton">Go to tasks</button>
+    </a>
+</div>
+
+<p class="Detail">Do you have any important tasks left to complete or any upcoming events you<br>
+    really dont wanna miss but you are worried about forgetting it at some point?<br>
+    Dont worry, we got you! Just go in and make a To-do list with <a href="/task"> <span>Gotta'Do.</span> </a></p>
 
 
-<a href="signup"><button id="signup">Sign up</button></a>
+<a href="/task"><button id="button">Add a new task</button></a>
 
-<a href="login"><button id="login">Log in</button></a>
+
+
+
+
+
+
+
+<style>
+    .Header {
+        height: 80px;
+        margin-left: 0%;
+        margin-top: 0%;
+        padding-top: 8px;
+        margin-bottom: 0%;
+        padding-bottom: 10px;
+        background-color: #1CA8C4;
+        padding-left: 50px;
+        border-radius: 30px;
+        border-width: 1.5px;
+        border-style: outset;
+        border-color: #1E2019;
+    }
+
+    h1 {
+        color: #FFFFFF;
+        font-family: Candara;
+        font-size: 60px;
+        margin-top: 0%;
+    }
+
+    .Heading {
+        float: left;
+
+    }
+
+    h3 {
+        color: #1CA8C4;
+        font-family: Helvetica;
+        font-weight: bolder;
+        font-size: 30px;
+        margin-left: 30px;
+        margin-bottom: 0%;
+    }
+
+    #taskName {
+        padding-top: 10px;
+    }
+
+    #taskDesc {
+        margin-top: 15px;
+    }
+
+    p {
+
+        margin-left: 65px;
+        margin-top: 180px;
+        margin-bottom: 0%;
+        font-family: Candara;
+        font-size: 35px;
+        line-height: 2;
+        text-align: center;
+        font-weight: bolder;
+        padding: 20px 30px 20px 30px;
+    }
+
+    span {
+        font-family: Candara;
+        font-size: 43px;
+        font-weight: bolder;
+        color: #29ccec;
+        text-shadow:
+            -1px -1px 0 #FFFFFF,
+            1px -1px 0 #FFFFFF,
+            -1px 1px 0 #FFFFFF,
+            1px 1px 0 #FFFFFF;
+    }
+
+    a {
+        text-decoration-style: none;
+        text-decoration: none;
+    }
+
+    #taskNameDetail {
+        font-weight: bold;
+    }
+
+    .wholeTaskBody {
+        background-color: #87A8AB;
+        background-color: white;
+        margin-top: 10px;
+        margin-left: 400px;
+        width: 1000px;
+        height: 230px;
+        border-color: #FFD270;
+        border-width: 3px;
+        border-radius: 10px;
+        box-shadow: 10px 8px #617e81;
+    }
+
+    .inputfield {
+        border-width: 3px;
+        border-radius: 10px;
+        margin-left: 100px;
+        margin-top: 10px;
+        font-size: 25px;
+        border-color: #FFC547;
+        background-color: #FFDF99;
+
+    }
+
+    .inputfield:placeholder-shown {
+        font-size: 26px;
+    }
+
+    .inputfield:placeholder-shown {
+        font-size: 26px;
+    }
+
+    #nameInput {
+        width: 400px;
+        height: 50px;
+    }
+
+    #descInput {
+        width: 400px;
+        height: 250px;
+    }
+
+    .Label {
+        font-family: Calibri;
+        color: #1E2019;
+        font-weight: bold;
+        font-size: 30px;
+        margin-left: 70px;
+    }
+
+    #viewButton {
+        background-color: #FFFFFF;
+        color: #1CA8C4;
+        font-size: 25px;
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin-top: 15px;
+        margin-right: 50px;
+        margin-left: 1100px;
+        border-color: #FFC547;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #viewButton:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+
+    }
+
+    #viewButton:active {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+
+    }
+
+    #button {
+        background-color: #FFFFFF;
+        color: #1CA8C4;
+        font-size: 25px;
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin-top: 30px;
+        margin-right: 50px;
+        margin-left: 780px;
+        border-color: #FFC547;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #button:active {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+
+    }
+
+    #button:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+
+    }
+
+    .button {
+        float: left;
+        background-color: #1CA8C4;
+        color: #FFFFFF;
+        font-size: 25px;
+        width: 100px;
+        height: 37px;
+        font-weight: normal;
+        border-radius: 15px;
+        margin-top: 15px;
+        border-color: #FFC547;
+        box-shadow: 5px 5px #3c3d3d;
+
+    }
+
+    .button:active {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+    }
+
+    .button:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #editBtn {
+        margin-left: 725px;
+    }
+
+    #delBtn {
+        margin-left: 20px;
+    }
+</style>

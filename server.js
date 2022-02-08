@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 const taskController = require('./controllers/taskController');
 var app = express();
 
+app.get('/', (req, res) => {
+    res.render('home')
+})
 
 app.use(bodyParser.urlencoded({
     extended: true
