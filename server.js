@@ -24,7 +24,7 @@ app.engine('hbs', exphbs.engine({ extname: 'hbs', defaultLayout: 'mainLayout', l
 app.set('view engine', 'hbs')
 
 //server
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("Success")
 })
 
