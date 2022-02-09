@@ -2,9 +2,9 @@
 
     <h1 class="Heading">Gotta'Do</h1>
 
-    <a href="/task/list" class="Heading"> <button type="button" class="button" id="viewButton">View all tasks</button>
+    <a href="/task/list" class="Heading"> <button type="button" id="viewButton">View all tasks</button>
     </a>
-    <a href="home" class="Heading"> <button type="button" class="button" id="homeBtn">Home</button>
+    <a href="/" class="Heading"> <button type="button" id="homeBtn">Home</button>
     </a>
 </div>
 
@@ -17,13 +17,16 @@
         <label for="taskName" class="Label" id="nameLabel">Task name:</label>
         <input required type="text" id="nameInput" class="inputfield" name="taskEditName" placeholder="task name"
             value="{{task.taskName}}">
-    </div>
+    </div> <br>
     <div class="form-group">
         <label for="taskName" class="Label" id="descLabel">Task description:</label>
-        <input required type="text" id="descInput" class="inputfield" name="taskEditDescription"
-            placeholder="task description" value="{{task.taskDescription}}">
+        {{!-- <input required type="text" id="descInput" class="inputfield" name="taskEditDescription"
+            placeholder="task description" value="{{task.taskDescription}}"> --}}
+        <textarea required name="taskEditDescription" placeholder="Task description" class="inputfield" id="descInput"
+            cols="30" rows="10">{{task.taskDescription}}</textarea>
     </div>
     <button type="submit" href="/task/list" class="button" id="addBtn">Update</button>
+    <a href="/task/list"> <button type="button" class="button" id="cancelBtn">Cancel</button></a>
 </form>
 
 
@@ -45,6 +48,8 @@
         border-width: 1.5px;
         border-style: outset;
         border-color: #1E2019;
+        position: sticky;
+        top: 0;
     }
 
     h1 {
@@ -60,6 +65,7 @@
     }
 
     h3 {
+        margin-top: 0%;
         color: #1CA8C4;
         font-family: Helvetica;
         font-weight: bolder;
@@ -70,10 +76,11 @@
     }
 
     .addTaskBox {
+        position: fixed;
         background-color: #87A8AB;
         background-color: white;
-        margin-top: 10px;
-        margin-left: 600px;
+        top: 165px;
+        left: 600px;
         width: 600px;
         height: 600px;
         border-color: #FFD270;
@@ -83,6 +90,7 @@
     }
 
     .inputfield {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         border-width: 3px;
         border-radius: 10px;
         margin-left: 100px;
@@ -97,10 +105,6 @@
         font-size: 26px;
     }
 
-    .inputfield:placeholder-shown {
-        font-size: 26px;
-    }
-
     #nameInput {
         width: 400px;
         height: 50px;
@@ -108,7 +112,8 @@
 
     #descInput {
         width: 400px;
-        height: 250px;
+        height: 230px;
+        font-size: 20px;
     }
 
     .Label {
@@ -120,6 +125,8 @@
     }
 
     #viewButton {
+        position: fixed;
+        right: 300px;
         background-color: #FFFFFF;
         color: #1CA8C4;
         font-size: 25px;
@@ -128,8 +135,6 @@
         font-weight: bold;
         border-radius: 15px;
         margin-top: 15px;
-        margin-right: 25px;
-        margin-left: 930px;
         border-color: #FFC547;
         box-shadow: 5px 5px #3c3d3d;
     }
@@ -151,6 +156,8 @@
     }
 
     #homeBtn {
+        position: fixed;
+        right: 60px;
         background-color: #FFFFFF;
         color: #1CA8C4;
         font-size: 25px;
@@ -159,8 +166,8 @@
         font-weight: bold;
         border-radius: 15px;
         margin-top: 15px;
-        margin-right: 50px;
-        margin-left: 0%;
+
+
         border-color: #FFC547;
         box-shadow: 5px 5px #3c3d3d;
     }
@@ -191,7 +198,8 @@
         border-radius: 15px;
         margin-top: 20px;
         border-color: #FFC547;
-        margin-left: 210px;
+        margin-left: 91px;
+        box-shadow: 5px 5px #3c3d3d;
     }
 
     #addBtn:actvie {
@@ -206,5 +214,37 @@
         color: #1E2019;
         border-color: #1E2019;
         box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #cancelBtn {
+        background-color: #1CA8C4;
+        color: #FFFFFF;
+        font-size: 25px;
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+        font-weight: bold;
+        border-radius: 15px;
+        margin-left: 20px;
+        border-color: #FFC547;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    #cancelBtn:actvie {
+        background-color: #648D90;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 2px 3px #3c3d3d;
+    }
+
+    #cancelBtn:hover {
+        background-color: #FFDF99;
+        color: #1E2019;
+        border-color: #1E2019;
+        box-shadow: 5px 5px #3c3d3d;
+    }
+
+    .button {
+        float: left;
     }
 </style>

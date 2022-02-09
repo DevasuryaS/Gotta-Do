@@ -2,25 +2,27 @@
 
     <h1 class="Heading">Gotta'Do</h1>
 
-    <a href="/task" class="Heading"> <button type="button" class="button" id="viewButton">Add a new task</button>
+    <a href="/task" class="Heading"> <button type="button" id="addBtn">Add a new task</button>
     </a>
-    <a href="home" class="Heading"> <button type="button" class="button" id="homeBtn">Home</button>
+    <a href="/" class="Heading"> <button type="button" id="homeBtn">Home</button>
     </a>
 </div>
 
 
 {{#each list}}
 <div class="wholeTaskBody">
+    <div>
+        <a href="/task/edit/{{this._id}}"> <button class="button" id="editBtn">Edit </button> </a>
+        <a href="/task/delete/{{this._id}}"> <button class="button" id="delBtn"> Delete </button> </a>
+    </div>
+
     <h3 class="Mention" id="taskName">Task Name</h3>
     <p class="Detail" id="taskNameDetail">{{this.taskName}}</p>
 
     <h3 class="Mention" id="taskDesc">Task Description</h3>
     <p class="Detail">{{this.taskDescription}}</p>
 
-    <div>
-        <a href="/task/edit/{{this._id}}"> <button class="button" id="editBtn">Edit </button> </a>
-        <a href="/task/delete/{{this._id}}"> <button class="button" id="delBtn"> Delete </button> </a>
-    </div>
+
 </div>
 {{/each}}
 
@@ -40,6 +42,8 @@
         border-width: 1.5px;
         border-style: outset;
         border-color: #1E2019;
+        position: sticky;
+        top: 0;
     }
 
     h1 {
@@ -73,10 +77,11 @@
 
     .Detail {
         margin-left: 65px;
-        margin-top: 3px;
+        margin-top: 8px;
         margin-bottom: 0%;
         font-family: Helvetica;
         font-size: 25px;
+        padding-right: 20px;
     }
 
     #taskNameDetail {
@@ -87,13 +92,22 @@
         background-color: #87A8AB;
         background-color: white;
         margin-top: 10px;
+        margin-bottom: 30px;
         margin-left: 400px;
         width: 1000px;
-        height: 230px;
+        height: max-content;
+        min-height: 230px;
         border-color: #FFD270;
         border-width: 3px;
         border-radius: 10px;
         box-shadow: 10px 8px #617e81;
+        padding-bottom: 20px;
+    }
+
+    .wholeTaskBody:hover {
+        border-width: 5px;
+        border-style: outset;
+        box-shadow: 12px 10px #617e81;
     }
 
     .inputfield {
@@ -133,21 +147,22 @@
         margin-left: 70px;
     }
 
-    #viewButton {
+    #addBtn {
+        position: fixed;
+        right: 300px;
+        top: 30px;
         background-color: #FFFFFF;
         color: #1CA8C4;
         font-size: 25px;
-        width: 200px;
+        width: 210px;
         height: 50px;
         font-weight: bold;
         border-radius: 15px;
-        margin-top: 15px;
-        margin-left: 930px;
         border-color: #FFC547;
         box-shadow: 5px 5px #3c3d3d;
     }
 
-    #viewButton:hover {
+    #addBtn:hover {
         background-color: #FFDF99;
         color: #1E2019;
         border-color: #1E2019;
@@ -155,7 +170,7 @@
 
     }
 
-    #viewButton:active {
+    #addBtn:active {
         background-color: #648D90;
         color: #1E2019;
         border-color: #1E2019;
@@ -164,6 +179,8 @@
     }
 
     #homeBtn {
+        position: fixed;
+        right: 60px;
         background-color: #FFFFFF;
         color: #1CA8C4;
         font-size: 25px;
@@ -171,9 +188,7 @@
         height: 50px;
         font-weight: bold;
         border-radius: 15px;
-        margin-top: 15px;
-        margin-right: 20px;
-        margin-left: 25px;
+        top: 30px;
         border-color: #FFC547;
         box-shadow: 5px 5px #3c3d3d;
     }
@@ -203,7 +218,7 @@
         height: 37px;
         font-weight: normal;
         border-radius: 15px;
-        margin-top: 15px;
+        margin-top: 20px;
         border-color: #FFC547;
         box-shadow: 5px 5px #3c3d3d;
 
